@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+
+# Environment Variables
+.env
+.env.*
+
+# Allure
+allure-results/
+allure-report/
+
+# Reports
+reports/screenshots/
+reports/*.html
+reports/*.json
+
+# Playwright
+playwright-report/
+test-results/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Coverage
+coverage/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/*.log
+
+# Temporary Files
+*.tmp
+*.temp
+
+# TypeScript
+*.tsbuildinfo

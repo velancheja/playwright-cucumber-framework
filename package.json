@@ -1,0 +1,33 @@
+{
+  "name": "sauce-demo-cucumber",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js",
+    "chrome": "cross-env BROWSER=chromium cucumber-js --retry 1",
+    "parallel": "cross-env BROWSER=chromium cucumber-js --parallel 2",
+    "firefox": "cross-env BROWSER=firefox cucumber-js --retry 1",
+    "webkit": "cross-env BROWSER=webkit cucumber-js --retry 1",
+    "all": "npm run chrome && npm run firefox && npm run webkit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@cucumber/cucumber": "^13.2.1",
+    "@playwright/test": "^1.63.0",
+    "allure": "^3.17.0",
+    "allure-commandline": "^2.46.1",
+    "allure-cucumberjs": "^3.12.1",
+    "cross-env": "^10.1.0",
+    "dotenv": "^17.4.2",
+    "multiple-cucumber-html-reporter": "^4.3.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "allure-js-commons": "^3.12.1"
+  }
+}
