@@ -1,4 +1,4 @@
-@regression
+@smoke
 @checkout
 Feature: Checkout Functionality
 

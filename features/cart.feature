@@ -1,4 +1,4 @@
-@smoke
+@regression
 Feature: Cart Functionality
 
   Scenario: Verify Product In Cart
