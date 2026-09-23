@@ -33,3 +33,17 @@ jobs:
           ls -la features
           ls -la step-definitions
           npx cucumber-js --tags "@smoke" --format progress
+
+      - name: Upload Failure Screenshots
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: failure-screenshots
+          path: reports/screenshots
+
+      - name: Upload Allure Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results
+          path: allure-results
