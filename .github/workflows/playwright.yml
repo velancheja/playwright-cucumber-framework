@@ -34,12 +34,14 @@ jobs:
           ls -la step-definitions
           npx cucumber-js --tags "@smoke" --format progress
 
-      - name: Verify Allure Results
+      - name: Locate Allure Files
         if: always()
         run: |
-          pwd
-          ls -la
-          ls -la allure-results || true
+          echo "Searching for allure folders..."
+          find . -type d | grep allure || true
+
+          echo "Searching for allure files..."
+          find . -type f | grep allure || true
 
       - name: Upload Failure Screenshots
         if: failure()
