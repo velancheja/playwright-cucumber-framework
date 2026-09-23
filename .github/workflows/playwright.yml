@@ -6,13 +6,10 @@ on:
       - main
 
 jobs:
-
   smoke-tests:
-
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout Code
         uses: actions/checkout@v4
 
@@ -28,9 +25,11 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Smoke Tests
-  run: |
-    pwd
-    ls -la
-    ls -la features
-    ls -la step-definitions
-    npx cucumber-js --tags "@smoke" --format progress
+        run: |
+          node --version
+          npm --version
+          pwd
+          ls -la
+          ls -la features
+          ls -la step-definitions
+          npx cucumber-js --tags "@smoke" --format progress
