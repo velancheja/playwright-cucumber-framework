@@ -30,12 +30,14 @@ BeforeAll(async () => {
 
   const browserType = process.env.BROWSER || "chromium";
 
+  const isCI = process.env.CI === "true";
+
   switch (browserType.toLowerCase()) {
 
     case "firefox":
 
       browser = await firefox.launch({
-        headless: process.env.HEADLESS === "true"
+        headless: isCI ? true : process.env.HEADLESS === "true"
       });
 
       break;
@@ -43,7 +45,7 @@ BeforeAll(async () => {
     case "webkit":
 
       browser = await webkit.launch({
-        headless: process.env.HEADLESS === "true"
+        headless: isCI ? true : process.env.HEADLESS === "true"
       });
 
       break;
@@ -51,7 +53,7 @@ BeforeAll(async () => {
     default:
 
       browser = await chromium.launch({
-        headless: process.env.HEADLESS === "true"
+        headless: isCI ? true : process.env.HEADLESS === "true"
       });
   }
 
