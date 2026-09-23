@@ -12,6 +12,10 @@ module.exports = {
     format: [
       "progress",
       "allure-cucumberjs/reporter"
-    ]
+    ],
+
+    formatOptions: {
+      resultsDir: "allure-results"
+    }
   }
 };
