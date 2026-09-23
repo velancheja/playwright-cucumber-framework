@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
 
       - name: Install Dependencies
         run: npm install
@@ -33,6 +33,13 @@ jobs:
           ls -la features
           ls -la step-definitions
           npx cucumber-js --tags "@smoke" --format progress
+
+      - name: Verify Allure Results
+        if: always()
+        run: |
+          pwd
+          ls -la
+          ls -la allure-results || true
 
       - name: Upload Failure Screenshots
         if: failure()
