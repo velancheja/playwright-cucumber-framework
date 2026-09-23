@@ -28,4 +28,9 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Smoke Tests
-        run: npx cucumber-js --tags "@smoke"
+  run: |
+    pwd
+    ls -la
+    ls -la features
+    ls -la step-definitions
+    npx cucumber-js --tags "@smoke" --format progress
